@@ -121,7 +121,7 @@ public class UserServiceImplTest {
 
         when(userRepo.findById(999L)).thenReturn(Optional.empty());
 
-        assertThrows(IllegalStateException.class, () -> userService.updateUser(userUpdateRequest));
+        assertThrows(ResponseStatusException.class, () -> userService.updateUser(userUpdateRequest));
     }
 
     @Test

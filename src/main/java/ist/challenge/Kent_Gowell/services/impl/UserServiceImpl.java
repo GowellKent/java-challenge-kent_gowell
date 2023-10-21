@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
     }
 
     public void updateUser(UserUpdateRequest userUpdateRequest) {
-        User user = userRepo.findById(userUpdateRequest.getId()).orElseThrow(() -> new IllegalStateException("User ID "+ userUpdateRequest.getId() +" not found") );
+        User user = userRepo.findById(userUpdateRequest.getId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "User ID "+ userUpdateRequest.getId() +" not found") );
 
         String username = userUpdateRequest.getUsername();
         String password = userUpdateRequest.getPassword();
