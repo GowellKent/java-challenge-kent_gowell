@@ -61,7 +61,7 @@ public class LoginServiceImplTest {
     @Test
     public void testLoginIncorrectCredentials() {
         LoginRequest loginRequest = new LoginRequest("validUsername", "wrongPassword");
-        User mockUser = new User("validUsername", "validPassword"); // Simulasi data pengguna yang valid
+        User mockUser = new User("validUsername", "validPassword");
 
         when(userRepo.findByUsername(loginRequest.getUsername())).thenReturn(Optional.of(mockUser));
 
@@ -72,7 +72,7 @@ public class LoginServiceImplTest {
     @Test
     public void testLoginSuccessful() {
         LoginRequest loginRequest = new LoginRequest("validUsername", "validPassword");
-        User mockUser = new User("validUsername", "validPassword"); // Simulasi data pengguna yang valid
+        User mockUser = new User("validUsername", "validPassword");
 
         when(userRepo.findByUsername(loginRequest.getUsername())).thenReturn(Optional.of(mockUser));
 
